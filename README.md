@@ -1,40 +1,22 @@
-# Welcome to Remix!
+# Workspace OKTA Prorotype
 
-- 📖 [Remix docs](https://remix.run/docs)
+A minimal remix app with `remix-auth` and strategies including `OKTA` and `Form`
 
-## Development
+## OKTA
 
-Run the dev server:
+For this to work, you'll need to check out and build the [curvenote fork of remix-auth-okta](https://github.com/curvenote/remix-auth-okta) and `npm link` it:
 
-```shellscript
+```
+git clone git@github.com:curvenote/remix-auth-okta.git
+cd remix-auth-okta
+npm i
+npm build
+npm link
+
+cd ../workspace-okta
+npm install
+npm link remix-auth-okta
 npm run dev
 ```
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+You'll also need to create a `.env` file from `.env.sample` and fill in the correct credentials.
